@@ -1,5 +1,7 @@
 **Ishlatish uchun qo'llanma**
 
+1 - `$pip install -r rewuirements.txt`
+
 1 - [BotFather](https://t.me/UlugbekWeb) dan olingan bot tokeni API_KEY o'rniga joylashtiring!
 
 2 - web_app_url uchun https://exemple.com/ o'rniga telegram-ads.html manzilini joylashtiring!
