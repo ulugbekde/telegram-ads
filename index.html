@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adsgram Ad Example</title>
+    <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script type="text/javascript">
+        const AdController = window.Adsgram.init({ blockId: "541" });
+        function showAds(){
+                AdController.show().then((result) => {
+                    if (result.done) {
+                        console.log('User watched the ad till the end. Rewarding...');
+                    } else {
+                        console.log('User did not watch the ad till the end.');
+                    }
+                }).catch((error) => {
+                    console.error('Error occurred during ad playback:', error);
+                });
+            
+        }
+        
+        </script>
+        <style>
+        
+        body {
+          margin: 0;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #000; 
+        }
+        
+        .container {
+          text-align: center;
+        }
+        
+        .animated-button {
+          display: inline-block;
+          padding: 12px 24px;
+          font-size: 16px;
+          font-weight: bold;
+          color: #fff;
+          background-color: #007bff; 
+          border: none;
+          border-radius: 25px;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+          transition: all 0.4s;
+        }
+        
+        .animated-button::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 300%;
+          height: 300%;
+          background-color: rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          transition: all 0.4s ease-out;
+          z-index: 0;
+          transform: translate(-50%, -50%);
+        }
+        
+        .animated-button:hover::before {
+          width: 0;
+          height: 0;
+        }
+        
+        .animated-button:hover {
+          color: #007bff;
+          background-color: #fff; 
+        }
+        
+        .animated-button:hover::after {
+          width: 100%;
+          height: 100%;
+        }
+        
+        .animated-button::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background-color: rgba(255, 255, 255, 0.2); 
+          border-radius: 50%;
+          transition: all 0.4s ease-out;
+          z-index: 0;
+          transform: translate(-50%, -50%);
+        }
+        
+        </style>
+</head>
+<body>
+  <div class="container">
+    <button class="animated-button" onclick="showAds()">Start</button>
+</div>
 
+</body>
+</html>
